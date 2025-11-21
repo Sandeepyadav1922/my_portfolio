@@ -22,7 +22,7 @@
     border: 3px solid rgb(77, 77, 174);
     box-shadow: 1px 1px 15px 0.5px rgb(93, 93, 183);
     border-radius: 50%;
-};
+}
 
 @media(max-width: 890px) {
     .about-left {
