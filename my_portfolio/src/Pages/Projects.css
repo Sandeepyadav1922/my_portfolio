@@ -1,6 +1,6 @@
 .project-main {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .projects-container {
@@ -8,7 +8,7 @@
     width: 88%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 2rem;
 }
 
