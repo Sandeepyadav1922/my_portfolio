@@ -25,14 +25,14 @@ function Contact() {
   const sendEmail = (values) => {
     emailjs
       .send(
-        "service_y8f735i",
-        "template_ileamm9",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           name: values.name,
           email: values.email,
           message: values.message,
         },
-        "VjiNP03-yfAFYlglf"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => alert("message send successfully!"))
       .catch(() => alert("Something Wrong to send message"));
