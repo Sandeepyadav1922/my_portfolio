@@ -4,7 +4,7 @@ function AboutPage() {
         <div className="about-left mt-10">
           <img
             className="shadow-lg shadow-indigo-500/50"
-            src="public/sky.png"
+            src="/assets/sky.png"
             alt="sky.img"
           />
         </div>

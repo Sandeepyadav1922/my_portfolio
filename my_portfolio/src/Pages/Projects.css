@@ -1,3 +1,4 @@
+
 .project-main {
     display: flex;
     justify-content: center;
@@ -15,7 +16,7 @@
 .projects-container div{
     padding: 2rem;
     width: 40%;
-    border: 1px solid geay;
+    border: 1px solid gray;
     border-radius: 1rem;
     background-color: #ffffff14;
     transition: 400ms;

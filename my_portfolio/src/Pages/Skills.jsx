@@ -93,7 +93,7 @@ function Skill() {
       </div>
       <div className="slidbar-container">
         <h1 className="text-2xl font-bold">
-          <img id="express" src="src/assets/expressjs img.jpeg" alt="express" style={{width: "40px", height: "40px", borderRadius: "50%"}}/>
+          <img id="express" src="/assets/expressjs img.jpeg" alt="express" style={{width: "40px", height: "40px", borderRadius: "50%"}}/>
           <label htmlFor="express">ExpressJs</label>
           <span id="hmtl" className="text-blue-500">
             82%
@@ -162,7 +162,7 @@ function Skill() {
       </div>
       <div className="slidbar-container">
         <h1 className="text-2xl font-bold">
-          <img id="tailwind" src="src/assets/tailwindcss.png" alt="tailwindcss" style={{width: "40px", height: "40px", borderRadius: "50%"}}/>
+          <img id="tailwind" src="/assets/tailwindcss.png" alt="tailwindcss" style={{width: "40px", height: "40px", borderRadius: "50%"}}/>
           <label htmlFor="tailwind">TailwindCss</label>
           <span className="text-blue-500">
             80%
