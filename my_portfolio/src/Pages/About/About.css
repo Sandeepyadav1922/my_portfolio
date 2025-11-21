@@ -1,0 +1,123 @@
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.about-left {
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+@media(min-width: 850px) {
+    .about-left img {
+        height: 25rem;
+    }
+}
+
+.about-left img{
+    display: flex;
+    border: 3px solid rgb(77, 77, 174);
+    box-shadow: 1px 1px 15px 0.5px rgb(93, 93, 183);
+    border-radius: 50%;
+};
+
+@media(max-width: 890px) {
+    .about-left {
+        width: 100%;
+    }
+    .about-right {
+        width: 100%;
+    }
+}
+
+.about-right-span{
+    margin-top: 1rem;
+    width: 50%;
+    font-weight: 500;
+    padding: 4rem;
+}
+
+@media(max-width: 890px) {
+    .about-right-span {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+.about-button1 {
+    width: 50%;
+    cursor: pointer;
+}
+
+.about-button1:hover {
+    background-color: #131390;
+    border-radius: 2rem;
+}
+
+.about-button2 {
+    width: 50%;
+    cursor: pointer;
+}
+
+.about-button2:hover {
+    background-color: #131390;
+    border-radius: 2rem;
+}
+
+.education-main {
+    display: flex;
+    justify-content: center;
+}
+
+.education-container {
+    padding: 2rem;
+    width: 90%;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.education-container div{
+    width: 40%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 1rem;
+    background-color: #ffffff14;
+    transition: 400ms;
+}
+
+@media(max-width: 990px) {
+    .education-container div {
+        width: 100%;
+    }
+}
+
+.education-container div:hover {
+    box-shadow: 1px 1px 15px 0.5px rgb(118, 187, 143);
+    transform: scale(1.02);
+}
+
+.certificate-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 1.5rem;
+    gap: 15px;
+}
+
+.certificate-buttons button {
+    background-color: #131390;
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+.certificate-buttons button:hover {
+    background-color: rgb(21, 219, 140);
+    transform: scale(1.02);
+}
