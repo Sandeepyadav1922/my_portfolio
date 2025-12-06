@@ -29,6 +29,7 @@ function Navbar() {
         <div className="md:hidden mt-4 flex flex-col items-center gap-4 bg-gray-800 p-4 rounded-lg">
           <Link to="home" onClick={() => setIsOpen(false)} className="hover:text-blue-400 cursor-pointer">Home</Link>
           <Link to="about" onClick={() => setIsOpen(false)} className="hover:text-blue-400 cursor-pointer">About</Link>
+          <Link to="education" onClick={() => setIsOpen(false)} className="hover:text-blue-400 cursor-pointer">Education</Link>
           <Link to="skill" onClick={() => setIsOpen(false)} className="hover:text-blue-400 cursor-pointer">Skill</Link>
           <Link to="project" onClick={() => setIsOpen(false)} className="hover:text-blue-400 cursor-pointer">Projects</Link>
           <Link to="contact" onClick={() => setIsOpen(false)} className="hover:text-blue-400 cursor-pointer">Contact</Link>
