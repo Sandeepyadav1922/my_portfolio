@@ -1,3 +1,9 @@
+@media(max-width: 400px) {
+    .about-main {
+    margin-top: 9rem;
+}
+}
+
 .about-container {
     display: flex;
     flex-wrap: wrap;
@@ -65,59 +71,4 @@
 .about-button2:hover {
     background-color: #131390;
     border-radius: 2rem;
-}
-
-.education-main {
-    display: flex;
-    justify-content: center;
-}
-
-.education-container {
-    padding: 2rem;
-    width: 90%;
-    gap: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.education-container div{
-    width: 40%;
-    border: 1px solid gray;
-    border-radius: 10px;
-    margin-top: 30px;
-    padding: 1rem;
-    background-color: #ffffff14;
-    transition: 400ms;
-}
-
-@media(max-width: 990px) {
-    .education-container div {
-        width: 100%;
-    }
-}
-
-.education-container div:hover {
-    box-shadow: 1px 1px 15px 0.5px rgb(118, 187, 143);
-    transform: scale(1.02);
-}
-
-.certificate-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 1.5rem;
-    gap: 15px;
-}
-
-.certificate-buttons button {
-    background-color: #131390;
-    padding: 0.5rem;
-    border-radius: 10px;
-    transition: 500ms;
-}
-
-.certificate-buttons button:hover {
-    background-color: rgb(21, 219, 140);
-    transform: scale(1.02);
 }

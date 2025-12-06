@@ -64,6 +64,12 @@
     box-shadow: 1px 1px 10px 0.5px gray;
 }
 
+@media(max-width: 500px) {
+    .emailId {
+        font-size: medium;
+}
+}
+
 .footer {
     margin-top: 3rem;
     padding: 3rem;

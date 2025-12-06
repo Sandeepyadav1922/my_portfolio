@@ -1,6 +1,14 @@
-function AboutPage() {
-    return (
-            <div className="about-container p-lg-5  mt-5">
+import "./About.css";
+// import AboutPage from "./AboutPage";
+// import Education from "./Education"
+
+function About() {
+  return (
+    <div className="about-main">
+      <div className="text-white text-center mt-15">
+        <h1 className="text-6xl">About <span className="text-blue-500">Me</span></h1>
+      </div>
+      <div className="about-container p-lg-5 mt-5">
         <div className="about-left mt-10">
           <img
             className="shadow-lg shadow-indigo-500/50"
@@ -34,7 +42,10 @@ function AboutPage() {
           </span>
           </div>
           </div>
-    );
+      {/* <AboutPage/> */}
+        {/* <Education/> */}
+    </div>
+  );
 }
 
-export default AboutPage;
+export default About;

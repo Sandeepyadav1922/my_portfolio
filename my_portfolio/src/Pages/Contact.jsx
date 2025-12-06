@@ -73,7 +73,7 @@ function Contact() {
               <i class="fa-solid fa-envelope text-3xl text-blue-300 mt-4"></i>
             </h2>
             <p className="ml-3 text-xl">
-              Email <br /> sandeepyada234abc@gmail.com
+              Email <br /> <span className="emailId">sandeepyada234abc@gmail.com</span>
             </p>
           </div>
           <br />

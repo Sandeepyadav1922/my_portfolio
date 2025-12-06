@@ -1,6 +1,7 @@
 import './App.css'
-import About from './Pages/About/About'
+import About from './Pages/About'
 import Contact from './Pages/Contact'
+import Education from './Pages/Education'
 import Footer from './Pages/Footer'
 import Home from './Pages/Home'
 import Navbar from './Pages/Navbar'
@@ -14,6 +15,7 @@ function App() {
       <Navbar/>
       <div id='home'><Home/></div>
       <div id='about'><About/></div>
+      <div id='education'><Education/></div>
       <div id='skill'><Skill/></div>
       <div id='project'><Projects/></div>
       <div id='contact'><Contact/></div>

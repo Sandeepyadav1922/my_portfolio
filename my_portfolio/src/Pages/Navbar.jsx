@@ -11,6 +11,7 @@ function Navbar() {
         <div className="navbar-links gap-8">
           <Link className="text-xl hover:text-blue-600 cursor-pointer" to="home" smooth={true} duration={500}>Home</Link>
           <Link className="text-xl hover:text-blue-600 cursor-pointer" to="about" smooth={true} duration={500}>About</Link>
+          <Link className="text-xl hover:text-blue-600 cursor-pointer" to="education" smooth={true} duration={500}>Eduaction</Link>
           <Link className="text-xl hover:text-blue-600 cursor-pointer" to="skill" smooth={true} duration={500}>Skill</Link>
           <Link className="text-xl hover:text-blue-600 cursor-pointer" to="project" smooth={true} duration={500}>Projects</Link>
           <Link className="text-xl hover:text-blue-600 cursor-pointer" to="contact" smooth={true} duration={500}>Contact</Link>
