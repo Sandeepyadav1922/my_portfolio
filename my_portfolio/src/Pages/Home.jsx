@@ -25,7 +25,7 @@ function Home() {
                 </div>
                 <div className="home-socialMedia flex justify-center gap-10 text-3xl mt-7 hover:shadow-blue-300">
                 <a href="https://github.com/Sandeepyadav1922"><i class="fa-brands fa-github"></i></a>
-                <a href="linkedin.com/in/sandeepyadav1922"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/sandeepyadav1922"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 </div>
                 </div>
