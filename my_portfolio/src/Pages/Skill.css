@@ -58,3 +58,41 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100%;
     height: 13px;
 }
+
+.skill-range-wrapper {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.skill-range-wrapper .rc-slider {
+  position: relative !important;
+  width: 100% !important;
+  height: 16px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.skill-range-wrapper .rc-slider-rail,
+.skill-range-wrapper .rc-slider-track {
+  position: absolute !important;
+  height: 16px !important;
+  top: 0 !important;
+  bottom: auto !important;
+  border-radius: 10px !important;
+}
+
+.skill-range-wrapper .rc-slider-rail {
+  background: #333 !important;
+}
+
+.skill-range-wrapper .rc-slider-track {
+  background: linear-gradient(
+    90deg,
+    #7167ee,
+    #8a42b8
+  ) !important;
+}
+
+.skill-range-wrapper .rc-slider-handle {
+  display: none !important;
+}

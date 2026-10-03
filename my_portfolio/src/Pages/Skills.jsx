@@ -1,6 +1,7 @@
 import "./Skill.css";
 
 function Skill() {
+
   return (
     <div className="text-white mt-10 skill-top">
         <h1 className="text-5xl font-extrabold text-center mb-10">My <span className="text-blue-500">Skills</span></h1>

@@ -1,6 +1,4 @@
 import "./About.css";
-// import AboutPage from "./AboutPage";
-// import Education from "./Education"
 
 function About() {
   return (
@@ -12,7 +10,7 @@ function About() {
         <div className="about-left mt-10">
           <img
             className="shadow-lg shadow-indigo-500/50"
-            src="/assets/sky.png"
+            src="/assets/professional img3.png"
             alt="sky.img"
           />
         </div>

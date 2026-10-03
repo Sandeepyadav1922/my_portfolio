@@ -1,55 +1,97 @@
 import emailjs from "emailjs-com";
-import { useFormik } from "formik";
+import { useState } from "react";
+import { sky } from "sky-alert";
 import "./Contact.css";
 
-const validate = (values) => {
+function Contact() {
+
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+});
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleError = (values) => {
   const errors = {};
-  if (!values.name) {
-    errors.name = "Name is Required";
+
+  if (!values.name.trim()) {
+    errors.name = "Name is required";
   }
 
-  if (!values.email) {
-    errors.email = "Email is Required";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+  if (!values.email.trim()) {
+    errors.email = "Email is required";
+  } else if (
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())
+  ) {
     errors.email = "Invalid email address";
   }
 
-  if (!values.message) {
-    errors.message = "Message is Required";
+  if (!values.message.trim()) {
+    errors.message = "Message is required";
   }
 
-  return errors;
+  setErrors(errors);
+
+  return Object.keys(errors).length === 0;
 };
+  
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-function Contact() {
-  const sendEmail = (values) => {
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          name: values.name,
-          email: values.email,
-          message: values.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(() => alert("message send successfully!"))
-      .catch(() => alert("Something Wrong to send message"));
-  };
+  const isValid = handleError(values);
 
-  const formik = useFormik({
-    initialValues: {
+  if (!isValid) {
+    sky.error("Please fill all fields correctly");
+    return;
+  }
+
+  try {
+    setIsSubmitting(true);
+
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        name: values.name,
+        email: values.email,
+        message: values.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
+    sky.success("Email sent successfully", {
+      duration: 4000,
+    });
+
+    setValues({
       name: "",
       email: "",
       message: "",
-    },
-    validate,
-    onSubmit: (values, { resetForm }) => {
-      sendEmail(values);
-      resetForm();
-    },
-  });
+    });
+    setErrors({});
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    sky.error("Failed to send message. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+}
+
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  setValues((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+
+  setErrors((prev) => ({
+    ...prev,
+    [name]: "",
+  }));
+};
 
   return (
     <div className="contact-container text-white mt-10">
@@ -85,7 +127,7 @@ function Contact() {
           </div>
         </div>
         <div className="contactLeft text-white">
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <label className="text-xl" for="name">
               Name
             </label>
@@ -94,15 +136,13 @@ function Contact() {
               id="name"
               type="text"
               name="name"
-              onChange={formik.handleChange}
-              value={formik.values.firstName}
+              onChange={handleChange}
+              value={values.name}
               placeholder="Enter your Full name"
               autocomplete="name"
               class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-3 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
             />
-            {formik.errors.name ? (
-              <div style={{ color: "red" }}>{formik.errors.name}</div>
-            ) : null}
+            {errors.name && <span style={{color: "#CC0000", fontWeight: "bold"}}>{errors.name}</span>}
             <br />
             <br />
             <label className="text-xl" for="email-address">
@@ -113,15 +153,13 @@ function Contact() {
               id="email-address"
               type="email"
               name="email"
-              onChange={formik.handleChange}
-              value={formik.values.email}
+              onChange={handleChange}
+              value={values.email}
               placeholder="Enter your email"
               autocomplete="email"
               className="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-3 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
             />
-            {formik.errors.email ? (
-              <div style={{ color: "red" }}>{formik.errors.email}</div>
-            ) : null}
+            {errors.email && <span style={{color: "#CC0000", fontWeight: "bold"}}>{errors.email}</span>}
             <br />
             <br />
             <label className="text-xl" for="message">
@@ -132,18 +170,16 @@ function Contact() {
               id="message"
               rows={4}
               cols={20}
-              onChange={formik.handleChange}
-              value={formik.values.message}
+              onChange={handleChange}
+              value={values.message}
               placeholder="write Your message"
               className="min-w-0 flex-auto rounded-md bg-white/5 px-3 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
             ></textarea>
-            {formik.errors.message ? (
-              <div style={{ color: "red" }}>{formik.errors.message}</div>
-            ) : null}
+            {errors.message && <span style={{color: "#CC0000", fontWeight: "bold"}}>{errors.message}</span>}
             <br />
-            <button className="text-xl font-medium">
+            <button className="text-xl font-medium" disabled={isSubmitting}>
               <i class="fa-solid fa-paper-plane text-blue-400"></i>
-              &nbsp;&nbsp;Send
+              &nbsp;&nbsp;{isSubmitting ? 'Sending...' : "Send"}
             </button>
           </form>
         </div>
